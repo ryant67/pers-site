@@ -1,10 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Routes, Route,
+} from 'react-router-dom';
+import LandingDis from './Display/LandingDis';
+import LoginDis from './Display/LoginDis';
+import RegisterDis from './Display/RegisterDis';
+import ErrorDis from './Display/ErrorDis';
 
-function App() {
+export default function App() {
   return (
-    <div>Hello React</div>
-  );
+    <Router>
+      <Routes>
+        <Route exact path='/' element={<LandingDis />} />
+        <Route path='/login' element={<LoginDis />} />
+        <Route path='/register' element={<RegisterDis />} />
+
+        
+        {/* Error 404 page for unfound pages */}
+        <Route path='*' element={<ErrorDis />} />
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
