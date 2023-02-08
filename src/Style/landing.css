@@ -1,0 +1,103 @@
+button {
+    font-family: PT Serif;
+}
+
+#landing_view {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome_header {
+    font-size: 6vh;
+}
+
+#welcome_message {
+    margin-top: 7vh;
+    font-size: 3vh;
+    line-height: 5vh;
+}
+
+#btn_group {
+    margin: 7vh auto;
+    width: 98%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#login_btn {
+    border: none;
+    background-color: inherit;
+    font-size: 4.5vh;
+}
+
+#register_btn {
+    border: none;
+    background-color: inherit;
+    font-size: 4.5vh;
+}
+
+#login_btn:hover {
+    cursor: pointer;
+    color: lightskyblue;
+}
+
+#register_btn:hover {
+    cursor: pointer;
+    color: lightskyblue;
+}
+
+/* Media 1025px and larger */
+@media (min-width: 1025px) {
+    #landing_view {
+        width: 75vw;
+        height: 60vh;
+    }
+}
+
+/* Media range of 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #landing_view {
+        width: 65vw;
+        height: 60vh;
+    }
+}
+
+/* Media range of 426px - 768px */
+@media (min-width: 426px) and (max-width: 768px) {
+    #landing_view {
+        width: 60vw;
+        height: 50vh;
+    }
+}
+
+/* Media range of 376px - 425px */
+@media (min-width: 376px) and (max-width: 425px) {
+    #landing_view {
+        width: 75vw;
+        height: 50vh;
+    }
+}
+
+/* Media range of 321px - 375px */
+@media (min-width: 321px) and (max-width: 375px) {
+    #landing_view {
+        width: 75vw;
+        height: 50vh;
+    }
+}
+
+/* Media 320px and smaller */
+@media (max-width: 320px) {
+    #landing_view {
+        width: 85vw;
+        height: 50vh;
+    }
+}

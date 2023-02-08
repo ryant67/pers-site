@@ -1,26 +1,35 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import LoginDis from './LoginDis';
-import RegisterDis from './RegisterDis';
+import '../Style/landing.css';
 
 export default function LandingDis() {
 
     return (
-      <div id='home_view'>
+        <div id='landing_view'>
+            
             <div id='welcome_header'>
-                Welcome to my Personal Portfolio Website
+                Hello, my name is Ryan Harris. <br />
+                <hr style={{width: '90%'}}/>
+                Welcome to my Personal Portfolio Website!
             </div>
             <div id='welcome_message'>
-                Here you will see some of my personal projects and a little information about me.
+                Here we will see some of my personal projects and a little information about me. <br />
+                Thank you for visiting.
             </div>
 
-            <button id='login_btn'>
-                <Link to={'/login'}>Login</Link>
-            </button>
-            <button id='register_btn'>
-                <Link to={'/register'}>Register</Link>
-            </button>
-      </div>
-      
+            <div id='btn_group'>
+                <Link to={'/login'}>
+                    <button id='login_btn'>
+                        Login
+                    </button>
+                </Link>
+                <Link to={'/register'}>
+                    <button id='register_btn'>
+                        Register
+                    </button>
+                </Link>
+            </div>
+
+      </div> 
   )
 }
