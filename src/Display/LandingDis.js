@@ -1,8 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../Style/landing.css';
+import { useEffect, useState } from 'react';
 
 export default function LandingDis() {
+    const [users, setUsers] = useState(null);
+
+    useEffect(() => {
+        fetch('api/users')
+            .then(response => response.json())
+            .then(json => setUsers(json.users))
+            .then(console.log(users))
+            .catch(err => console.log(err))
+    }, [])
 
     return (
         <div id='back_img'>

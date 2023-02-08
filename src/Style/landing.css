@@ -7,7 +7,8 @@ button {
     height: 100vh;
     background-image: url('../Images/landing.png');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 1280px 725px;
+    overflow: -moz-hidden-unscrollable;
 }
 
 #landing_view {
@@ -80,6 +81,10 @@ button {
         width: 83vw;
         height: 60vh;
     }
+
+    #back_img {
+        background-size: 1024px 575px;
+    }
 }
 
 /* Media range of 426px - 768px */
@@ -88,6 +93,10 @@ button {
         top: 45%;
         width: 85vw;
         height: 60vh;
+    }
+
+    #back_img {
+        background-size: 768px 550px;
     }
 }
 
@@ -98,6 +107,11 @@ button {
         width: 85vw;
         height: 50vh;
     }
+
+    #back_img {
+        background-size: 550px 575px;
+        background-position: center;
+    }
 }
 
 /* Media range of 321px - 375px */
@@ -107,6 +121,11 @@ button {
         width: 89vw;
         height: 50vh;
     }
+
+    #back_img {
+        background-size: 550px 575px;
+        background-position: center;
+    }
 }
 
 /* Media 320px and smaller */
@@ -115,5 +134,10 @@ button {
         top: 30%;
         width: 90vw;
         height: 50vh;
+    }
+
+    #back_img {
+        background-size: 550px 575px;
+        background-position: center;
     }
 }
