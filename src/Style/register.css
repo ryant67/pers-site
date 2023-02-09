@@ -2,7 +2,7 @@
     margin: 0;
     position: absolute;
     top: 50%;
-    left: 30%;
+    left: 27%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 40vw;
@@ -16,7 +16,7 @@
 }
 
 #register_directions {
-    width: 450px;
+    width: 90%;
     margin: auto;
 }
 
@@ -29,29 +29,29 @@
     border-bottom: 1px solid darkgray;
     outline: none;
     font-size: 18px;
-    width: 450px;
+    width: 90%;
     margin-top: 20px;
     padding: 0;
 }
 
 .form_field:nth-child(1) {
-    width: 215px;
-    margin-right: 10px;
+    width: 43%;
+    margin-right: 2%;
 }
 
 .form_field:nth-child(2) {
-    width: 215px;
-    margin-left: 10px;
+    width: 43%;
+    margin-left: 2%;
 }
 
 .form_field:nth-child(3) {
-    width: 330px;
-    margin-right: 10px;
+    width: 65%;
+    margin-right: 2%;
 }
 
 .form_field:nth-child(4) {
-    width: 100px;
-    margin-left: 10px;
+    width: 21%;
+    margin-left: 2%;
 }
 
 #form_btn {
@@ -66,3 +66,41 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+#info_view {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 40vw;
+    height: 475px;
+    border-left: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: inherit;
+}
+
+#info_text {
+    margin-left: 10%;
+}
+
+/* Media 1025px and larger */
+@media (min-width: 1025px) {}
+
+/* Media range of 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+/* Media range of 426px - 768px */
+@media (min-width: 426px) and (max-width: 768px) {}
+
+/* Media range of 376px - 425px */
+@media (min-width: 376px) and (max-width: 425px) {}
+
+/* Media range of 321px - 375px */
+@media (min-width: 321px) and (max-width: 375px) {}
+
+/* Media 320px and smaller */
+@media (max-width: 320px) {}

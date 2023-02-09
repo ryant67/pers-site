@@ -1,0 +1,19 @@
+
+
+/* Media 1025px and larger */
+@media (min-width: 1025px) {}
+
+/* Media range of 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+/* Media range of 426px - 768px */
+@media (min-width: 426px) and (max-width: 768px) {}
+
+/* Media range of 376px - 425px */
+@media (min-width: 376px) and (max-width: 425px) {}
+
+/* Media range of 321px - 375px */
+@media (min-width: 321px) and (max-width: 375px) {}
+
+/* Media 320px and smaller */
+@media (max-width: 320px) {}

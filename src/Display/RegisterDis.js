@@ -2,6 +2,7 @@ import '../Style/register.css';
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoremIpsum, { loremIpsum } from 'react-lorem-ipsum';
 
 export default function RegisterDis() {
 
@@ -163,6 +164,12 @@ export default function RegisterDis() {
           <button id='form_btn' type='submit'>Complete Registration</button>
 
         </form>
+      </div>
+      <div id='info_view'>
+        <div id='info_text'>
+          <LoremIpsum p={2} />
+        </div>
+
       </div>
     </div>
   )
