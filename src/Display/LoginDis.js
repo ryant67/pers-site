@@ -63,7 +63,7 @@ export default function LoginDis() {
             Forgot your password?
             <div>
               <button type='button' onClick={statusChange}>
-                Change Status
+                Reset Password Here
               </button>
             </div>
           </div>
