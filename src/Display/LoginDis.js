@@ -86,6 +86,9 @@ export default function LoginDis() {
         setPassword('')
         setConfPassword('')
         setStatus(false)
+
+        alert('Your password has been successfully changed, ' + 
+        'you may now log-in!')
       } else {
         alert('Sorry but your information did not match a registered user or you are ' +
           'trying to update your password to your currently used password.')
