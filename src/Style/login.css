@@ -147,8 +147,12 @@
     padding: 0;
 }
 
+.password_field:nth-child(4) {
+    margin-bottom: 0;
+}
+
 #passReset_btn {
-    margin: 15px auto;
+    margin: 30px auto 0 auto;
     width: 75%;
     border: none;
     background-color: black;
@@ -164,7 +168,7 @@
 }
 
 #passCancel_btn {
-    margin: 15px auto;
+    margin: 20px auto;
     width: 75%;
     border: none;
     background-color: black;

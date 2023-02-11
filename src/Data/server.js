@@ -10,7 +10,15 @@ createServer({
             lastName: 'Harris',
             age: '28',
             email: 'ryan.t.harris67@gmail.com',
-            userName: 'OlboyReginald',
+            userName: 'Admin',
+            password: 'Pass123'
+        })
+        server.create('user', {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: '33',
+            email: 'john.doe@email.com',
+            userName: 'johnDoe',
             password: 'Pass123'
         })
     },
@@ -28,6 +36,13 @@ createServer({
             let id = request.params.id;
 
             return schema.users.find(id);
+        })
+
+        //Mocked GET Request for user by Username
+        this.get('/users/:userName', (schema, request) => {
+            let userName = request.params.userName;
+
+            return schema.users.find(userName);
         })
 
         // Mocked POST Request to create a new user
