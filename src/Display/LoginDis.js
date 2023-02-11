@@ -6,13 +6,16 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 
 export default function LoginDis() {
 
+  const navigate = useNavigate();
   const [users, setUsers] = useState(null);
   const [updateUser, setUpdateUser] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useState(null);
   const [status, setStatus] = useState(false);
-  const [userId, setUserId] = useState(null);
   const [userName, setUserName] = useState('');
+  const [loggedInUsername, setLoggedInUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loggedInPassword, setLoggedInPassword] = useState('');
   const [confPassword, setConfPassword] = useState('');
 
   const statusChange = (e) => {
@@ -24,8 +27,31 @@ export default function LoginDis() {
   }
 
   const findUser = () => {
-    const user = users.find(u => u.userName === userName)
-    setUpdateUser(user)
+    const changeUser = users.find(u => u.userName === userName)
+    const logUser = users.find(u => u.userName === loggedInUsername)
+    setUpdateUser(changeUser)
+    setLoggedInUser(logUser)
+  }
+
+  const userLogIn = async (e) => {
+    e.preventDefault()
+    try {
+      if (loggedInUsername === loggedInUser.userName
+      && loggedInPassword === loggedInUser.password) {
+        navigate('/home')
+      } else {
+        alert('Incorrect Password')
+        setLoggedInPassword('')
+      }
+    } catch (err) {
+      console.log(err.message)
+      if (err.message === `Cannot read properties of undefined (reading 'userName')`) {
+        alert('Sorry but your information did not match a registered user.')
+        setLoggedInUser(null)
+        setLoggedInUsername('')
+        setLoggedInPassword('')
+      }
+    } 
   }
 
   const handleCancel = (e) => {
@@ -39,28 +65,46 @@ export default function LoginDis() {
 
   const updatePassword = async (e) => {
     e.preventDefault()
-    if (email === updateUser.email
+    try {
+      if (email === updateUser.email
         && password === confPassword
         && updateUser.password !== password) {
-      const response = await fetch(`/api/users/${updateUser.id}`, {
-        method: 'PATCH',
-        body: JSON.stringify({ password }),
-      })
-      const json = await response.json()
+        const response = await fetch(`/api/users/${updateUser.id}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ password }),
+        })
+        const json = await response.json()
 
-      const usersCopy = [...users]
-      const index = users.findIndex((u) => u.id === userId)
-      usersCopy[index] = json.user
+        const usersCopy = [...users]
+        const index = users.findIndex((u) => u.id === updateUser.id)
+        usersCopy[index] = json.user
 
-      setUsers(usersCopy)
-      setUpdateUser(null)
-      setUserName('')
-      setEmail('')
-      setPassword('')
-      setConfPassword('')
-      setStatus(false)
-    } else {
-      alert('Sorry but your information did not match a registered user.')
+        setUsers(usersCopy)
+        setUpdateUser(null)
+        setUserName('')
+        setEmail('')
+        setPassword('')
+        setConfPassword('')
+        setStatus(false)
+      } else {
+        alert('Sorry but your information did not match a registered user or you are ' +
+          'trying to update your password to your currently used password.')
+        setUpdateUser(null)
+        setUserName('')
+        setEmail('')
+        setPassword('')
+        setConfPassword('')
+      }
+    } catch (err) {
+      console.log(err.message)
+      if (err.message === `Cannot read properties of undefined (reading 'email')`) {
+        alert('Sorry but your information did not match a registered user.')
+        setUpdateUser(null)
+        setUserName('')
+        setEmail('')
+        setPassword('')
+        setConfPassword('')
+      }
     }
   }
 
@@ -82,18 +126,23 @@ export default function LoginDis() {
             Please fill out the required fields.
           </div>
         </div>
-        <form id='login_form'>
+        <form id='login_form' onSubmit={userLogIn}>
 
           <input
             type='text'
             className='login_field'
             placeholder='Username'
-            required={true} />
+            value={loggedInUsername}
+            required={true}
+            onChange={e => setLoggedInUsername(e.target.value)}
+            onBlur={findUser} />
 
           <input
             type='password'
             className='login_field'
             placeholder='Password'
+            value={loggedInPassword}
+            onChange={e => setLoggedInPassword(e.target.value)}
             required={true} />
 
           <button id='login_bttn' type='submit'>
@@ -116,7 +165,7 @@ export default function LoginDis() {
               Forgot your password?
             <div>
               <button type='button' onClick={statusChange}>
-                Reset Password
+                Reset It Here
               </button>
             </div>
           </div>

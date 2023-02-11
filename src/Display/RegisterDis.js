@@ -2,7 +2,7 @@ import '../Style/register.css';
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LoremIpsum, { loremIpsum } from 'react-lorem-ipsum';
+import { LoremIpsum } from 'react-lorem-ipsum';
 
 export default function RegisterDis() {
 
