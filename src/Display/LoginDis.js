@@ -30,9 +30,12 @@ export default function LoginDis() {
 
       <div id='login_view'>
         <div id='login_directions'>
-          <div>Hello & Welcome!</div>
+          <div id='login_header'>Welcome</div>
+          <div id='login_message'>
+            Please fill out the required fields.
+          </div>
         </div>
-        <form>
+        <form id='login_form'>
 
           <input
             type='text'
@@ -50,25 +53,28 @@ export default function LoginDis() {
               Login
           </button>
 
+        </form>
+
+        <div id='login_options'>
           <div id='reg_redirect'>
             Don't have an account?
             <div>
               <a href='/register'>
-                Register Here
+                Register
               </a>
             </div>
           </div>
 
           <div id='pass_change'>
-            Forgot your password?
+              Forgot your password?
             <div>
               <button type='button' onClick={statusChange}>
-                Reset Password Here
+                Reset Password
               </button>
             </div>
           </div>
+        </div>
 
-        </form>
       </div>
 
       { status === true
