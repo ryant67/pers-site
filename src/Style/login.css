@@ -42,9 +42,16 @@
     margin: 30px auto;
     width: 75%;
     border: none;
-    background-color: lightgreen;
+    background-color: black;
+    color: white;
     border-radius: 30px;
     font-size: 25px;
+}
+
+#login_bttn:hover {
+    cursor: pointer;
+    background-color: lightgreen;
+    color: black;
 }
 
 #login_options {
@@ -79,28 +86,6 @@
     color: blueviolet;
 }
 
-
-
-
-
-
-#password_view {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 73%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 40vw;
-    height: 475px;
-    border: 3px solid black;
-    border-radius: 10%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    background-color: inherit;
-}
-
 #loginInfo_view {
     margin: 0;
     position: absolute;
@@ -121,3 +106,93 @@
 #loginInfo_text {
     margin-left: 10%;
 }
+
+#password_view {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 40vw;
+    height: 475px;
+    border: 3px solid black;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: inherit;
+}
+
+#password_form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#password_directions {
+    width: 90%;
+    margin: 15px auto;
+    font-size: 40px;
+}
+
+.password_field {
+    border: none;
+    border-bottom: 1px solid darkgray;
+    outline: none;
+    font-size: 18px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 0;
+}
+
+#passReset_btn {
+    margin: 15px auto;
+    width: 75%;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    font-size: 25px;
+}
+
+#passReset_btn:hover {
+    cursor: pointer;
+    background-color: lightgreen;
+    color: black;
+}
+
+#passCancel_btn {
+    margin: 15px auto;
+    width: 75%;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    font-size: 25px;
+}
+
+#passCancel_btn:hover {
+    cursor: pointer;
+    background-color: lightcoral;
+    color: black;
+}
+
+/* Media 1025px and larger */
+@media (min-width: 1025px) {}
+
+/* Media range of 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+/* Media range of 426px - 768px */
+@media (min-width: 426px) and (max-width: 768px) {}
+
+/* Media range of 376px - 425px */
+@media (min-width: 376px) and (max-width: 425px) {}
+
+/* Media range of 321px - 375px */
+@media (min-width: 321px) and (max-width: 375px) {}
+
+/* Media 320px and smaller */
+@media (max-width: 320px) {}

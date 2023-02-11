@@ -83,7 +83,7 @@ export default function LoginDis() {
           <div id='password_directions'>
             Reset your Password!
           </div>
-          <form>
+          <form id='password_form'>
 
             <input
               type='text'

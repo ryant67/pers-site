@@ -55,16 +55,32 @@
 }
 
 #form_btn {
-    margin: 50px 0;
+    margin: 40px auto 0 auto;
+    width: 75%;
     border: none;
-    background-color: inherit;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
     font-size: 25px;
 }
 
 #form_btn:hover {
-    color: blueviolet;
-    text-decoration: underline;
     cursor: pointer;
+    background-color: lightgreen;
+    color: black;
+}
+
+#reg_options {
+    margin: 30px auto 20px auto;
+}
+
+#reg_options a {
+    color: black;
+}
+
+#reg_options a:hover {
+    cursor: pointer;
+    color: blueviolet;
 }
 
 #info_view {

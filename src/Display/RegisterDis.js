@@ -58,7 +58,9 @@ export default function RegisterDis() {
     <div>
       <div id='register_view'>
         <div id='register_directions'>
-          <div id='register_header'>Registration</div>
+          <div id='register_header'>
+            Create an Account
+          </div>
           <div id='register_message'>Please fill out the below fields.</div>
         </div>
         <form onSubmit={submitForm}>
@@ -164,6 +166,18 @@ export default function RegisterDis() {
           <button id='form_btn' type='submit'>Complete Registration</button>
 
         </form>
+
+        <div id='reg_options'>
+          <div id='login_redirect'>
+            Already have an account?
+            <div>
+              <a href='/login'>
+                Login
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div id='info_view'>
         <div id='info_text'>
