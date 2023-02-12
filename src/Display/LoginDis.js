@@ -11,6 +11,10 @@ export default function LoginDis() {
   const [updateUser, setUpdateUser] = useState(null);
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [status, setStatus] = useState(false);
+  const [errorModal, setErrorModal] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [successModal, setSuccessModal] = useState(false);
+  const [successMsg, setSuccessMsg] = useState('');
   const [userName, setUserName] = useState('');
   const [loggedInUsername, setLoggedInUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -18,12 +22,37 @@ export default function LoginDis() {
   const [loggedInPassword, setLoggedInPassword] = useState('');
   const [confPassword, setConfPassword] = useState('');
 
-  const statusChange = (e) => {
+  const statusChange = () => {
     if (status === false) {
       setStatus(true);
     } else {
       setStatus(false);
     }
+  }
+
+  const errorChange = () => {
+    if (errorModal === false) {
+      setErrorModal(true);
+    } else {
+      setErrorModal(false);
+    }
+  }
+
+  const successChange = () => {
+    if (successModal === false) {
+      setSuccessModal(true);
+    } else {
+      setSuccessModal(false);
+    }
+  }
+
+  const handleCancel = (e) => {
+    e.preventDefault()
+    setStatus(false)
+    setUserName('')
+    setEmail('')
+    setPassword('')
+    setConfPassword('')
   }
 
   const findUser = () => {
@@ -40,27 +69,20 @@ export default function LoginDis() {
       && loggedInPassword === loggedInUser.password) {
         navigate('/home')
       } else {
-        alert('Incorrect Password')
-        setLoggedInPassword('')
+        setErrorModal(true);
+        setErrorMsg('It seems you\'ve entered an incorrect password!');
+        setLoggedInPassword('');
       }
     } catch (err) {
-      console.log(err.message)
-      if (err.message === `Cannot read properties of undefined (reading 'userName')`) {
-        alert('Sorry but your information did not match a registered user.')
-        setLoggedInUser(null)
-        setLoggedInUsername('')
-        setLoggedInPassword('')
+      if (err) {
+        setErrorModal(true);
+        setErrorMsg('We apologize, but your information could not be verified' +
+          ' at this time. Please try again later.');
+        setLoggedInUser(null);
+        setLoggedInUsername('');
+        setLoggedInPassword('');
       }
     } 
-  }
-
-  const handleCancel = (e) => {
-    e.preventDefault()
-    setStatus(false)
-    setUserName('')
-    setEmail('')
-    setPassword('')
-    setConfPassword('')
   }
 
   const updatePassword = async (e) => {
@@ -79,34 +101,37 @@ export default function LoginDis() {
         const index = users.findIndex((u) => u.id === updateUser.id)
         usersCopy[index] = json.user
 
-        setUsers(usersCopy)
-        setUpdateUser(null)
-        setUserName('')
-        setEmail('')
-        setPassword('')
-        setConfPassword('')
-        setStatus(false)
+        setUsers(usersCopy);
+        setSuccessModal(true);
+        setSuccessMsg('Your password has been successfully changed, ' +
+          'you may now login!')
+        setUpdateUser(null);
+        setUserName('');
+        setEmail('');
+        setPassword('');
+        setConfPassword('');
+        setStatus(false);
 
-        alert('Your password has been successfully changed, ' + 
-        'you may now log-in!')
       } else {
-        alert('Sorry but your information did not match a registered user or you are ' +
-          'trying to update your password to your currently used password.')
-        setUpdateUser(null)
-        setUserName('')
-        setEmail('')
-        setPassword('')
-        setConfPassword('')
+        setErrorModal(true);
+        setErrorMsg('We apologize, but your information could not be verified' +
+          ' at this time. Please try again later.');
+        setUpdateUser(null);
+        setUserName('');
+        setEmail('');
+        setPassword('');
+        setConfPassword('');
       }
     } catch (err) {
-      console.log(err.message)
-      if (err.message === `Cannot read properties of undefined (reading 'email')`) {
-        alert('Sorry but your information did not match a registered user.')
-        setUpdateUser(null)
-        setUserName('')
-        setEmail('')
-        setPassword('')
-        setConfPassword('')
+      if (err) {
+        setErrorModal(true);
+        setErrorMsg('We apologize, but your information could not be verified' +
+          ' at this time. Please try again later.');
+        setUpdateUser(null);
+        setUserName('');
+        setEmail('');
+        setPassword('');
+        setConfPassword('');
       }
     }
   }
@@ -252,11 +277,55 @@ export default function LoginDis() {
           :
           <div id='loginInfo_view'>
             <div id='loginInfo_text'>
-              <LoremIpsum p={2} />
+              <LoremIpsum p={1} />
             </div>
           </div>
         }
       </div>
+
+      {errorModal === true
+        ?
+        <div>
+          <div className='whole_view'></div>
+          <div id='error_view'>
+            <div id='error_header'>Ooops! Something went wrong!</div>
+            <hr style={{
+              width: '90%',
+              color: 'black',
+            }} />
+            <div id='error_message'>
+              { errorMsg }
+            </div>
+            <button type='button' id='error_btn'
+              onClick={errorChange}>
+              Close
+            </button>  
+          </div>
+        </div>
+        :
+        <div></div>}
+      
+      {successModal === true
+        ?
+        <div>
+          <div className='whole_view'></div>
+          <div id='success_view'>
+            <div id='success_header'>Hooray & Congratulations</div>
+            <hr style={{
+              width: '90%',
+              color: 'black',
+            }} />
+            <div id='success_message'>
+              { successMsg }
+            </div>
+            <button type='button' id='success_btn'
+              onClick={successChange}>
+              Confirm
+            </button>  
+          </div>
+        </div>
+        :
+        <div></div>}
 
     </div>
   )

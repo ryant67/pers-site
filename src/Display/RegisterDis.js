@@ -181,7 +181,7 @@ export default function RegisterDis() {
       </div>
       <div id='info_view'>
         <div id='info_text'>
-          <LoremIpsum p={2} />
+          <LoremIpsum p={1} />
         </div>
 
       </div>
