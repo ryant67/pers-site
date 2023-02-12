@@ -67,6 +67,10 @@ button {
 
 /* Media 1025px and larger */
 @media (min-width: 1025px) {
+    #back_img {
+        background-size: 100vw 100vh;
+    }
+
     #landing_view {
         top: 50%;
         width: 75vw;
