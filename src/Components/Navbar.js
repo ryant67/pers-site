@@ -1,7 +1,12 @@
-import React from 'react'
+import '../Style/navbar.css';
+import React from 'react';
 
 export default function navbar() {
   return (
-    <div>navbar</div>
+    <div>
+      <div id='nav_view'>
+
+      </div>
+    </div>
   )
 }
