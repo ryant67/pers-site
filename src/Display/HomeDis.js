@@ -7,16 +7,14 @@ export default function HomeDis() {
   const navigate = useNavigate();
 
   const accessCheck = () => {
-    localStorage.getItem('userName') === null 
-      ? navigate('/login')
-      : navigate('/home')
+    localStorage.getItem('userName') !== null 
+      ? navigate('/home')
+      : navigate('/login')
   }
 
   const handleLogout = (e) => {
     e.preventDefault()
-
     localStorage.clear()
-
     navigate('/login')
   }
   
