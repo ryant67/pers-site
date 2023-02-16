@@ -6,6 +6,6 @@ export default function HomeDis() {
   
 
   return (
-    <div>Hello { localStorage.firstName }</div>
+    <div>Hello {localStorage.firstName} { localStorage.lastName }</div>
   )
 }
