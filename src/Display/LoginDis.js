@@ -60,13 +60,19 @@ export default function LoginDis() {
     const logUser = users.find(u => u.userName === loggedInUsername)
     setUpdateUser(changeUser)
     setLoggedInUser(logUser)
+    localStorage.setItem('id', logUser.id)
+    localStorage.setItem('firstName', logUser.firstName)
+    localStorage.setItem('lastName', logUser.lastName)
+    localStorage.setItem('age', logUser.age)
+    localStorage.setItem('email', logUser.email)
+    localStorage.setItem('userName', logUser.userName)
   }
 
   const userLogIn = async (e) => {
     e.preventDefault()
     try {
       if (loggedInUsername === loggedInUser.userName
-      && loggedInPassword === loggedInUser.password) {
+        && loggedInPassword === loggedInUser.password) {
         navigate('/home')
       } else {
         setErrorModal(true);
@@ -136,12 +142,16 @@ export default function LoginDis() {
     }
   }
 
-  useEffect(() => {
+  const obtainUsers = () => {
     fetch('api/users/')
       .then(res => res.json())
       .then(json => setUsers(json.users))
       .then(console.log(users))
       .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    obtainUsers()
   }, [])
 
   return (
