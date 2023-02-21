@@ -35,7 +35,9 @@ export default function Navbar() {
         <ul id='nav_list'>
           <li className='nav_item'> | </li>
           <li className='nav_item'>
-            <a>Projects</a>
+            <a onClick={handleDropdown}>
+              Projects
+            </a>
           </li>
           <li className='nav_item'> | </li>
           <li className='nav_item'>
@@ -45,36 +47,28 @@ export default function Navbar() {
           </li>
           <li className='nav_item'> | </li>
           <li className='nav_item'>
-            <button type='button'>Contact</button>
+            <button type='button'
+            onClick={handleContact}>
+              Contact
+            </button>
           </li>
           <li className='nav_item'> | </li>
         </ul>
         <div className='nav_title'>Software Developer</div>
-        
-
-
-
-
-
-
-        {/* <div id='nav_dropdown'>
-          <button
-            type='button'
-            onClick={handleDropdown}>
-            Project Selection
-          </button>
-          {dropStatus === true
-            ?
-            <div>
-              <ul>
-                
-              </ul>
-            </div>
-            :
-            <div></div>}
-        </div> */}
-        
       </div>
+
+      {dropStatus === true
+        ?
+        <div>True Dropdown</div>
+        :
+        <div></div>}
+      
+      {contactStatus === true
+        ?
+        <div>True Contact</div>
+        :
+        <div></div>}
+
     </div>
   )
 }
