@@ -59,7 +59,19 @@ export default function Navbar() {
 
       {dropStatus === true
         ?
-        <div>True Dropdown</div>
+        <div id='dropdown_view'>
+          <ul id='dropdown_list'>
+            <li className='dropdown_item'>
+              Calculator
+            </li>
+            <li className='dropdown_item'>
+              Calculator
+            </li>
+            <li className='dropdown_item'>
+              Calculator
+            </li>
+          </ul>
+        </div>
         :
         <div></div>}
       

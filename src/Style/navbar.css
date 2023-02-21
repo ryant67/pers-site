@@ -59,3 +59,13 @@
     text-align: center;
     cursor: default;
 }
+
+#dropdown_view {
+    width: 250px;
+    height: auto;
+    background-color: lightseagreen;
+    position: absolute;
+    top: 80px;
+    left: 400px;
+    border-radius: 25px;
+}
