@@ -1,6 +1,61 @@
 #nav_view {
     background-color: lightgray;
     width: 100%;
-    height: 70px;
+    height: 80px;
     top: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#nav_list {
+    width: 40%;
+    height: 80px;
+    text-align: center;
+    padding: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav_item {
+    list-style: none;
+    cursor: default;
+    margin: 0 12px 0 12px;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.nav_item a:hover {
+    color: lightseagreen;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.nav_item button {
+    font-size: 20px;
+    width: 150px;
+    padding: 2px;
+    background-color: lightseagreen;
+    color: black;
+    border: none;
+    border-radius: 25px;
+}
+
+.nav_item button:hover {
+    color: lightseagreen;
+    background-color: black;
+    cursor: pointer;
+}
+
+.nav_title {
+    width: 30%;
+    height: 80px;
+    font-size: 30px;
+    line-height: 80px;
+    text-align: center;
+    cursor: default;
 }

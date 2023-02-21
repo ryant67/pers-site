@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 export default function Navbar() {
 
   const [dropStatus, setDropStatus] = useState(false);
+  const [contactStatus, setContactStatus] = useState(false);
 
   const handleDropdown = (e) => {
     e.preventDefault()
@@ -15,21 +16,41 @@ export default function Navbar() {
     }
   }
 
+  const handleContact = (e) => {
+    e.preventDefault()
+    if (contactStatus === false) {
+      setContactStatus(true)
+    } else {
+      setContactStatus(false)
+    }
+  }
+
   return (
     <div>
       <div id='nav_view'>
         <div
           id='top'
           style={{height: '0', width: '0'}}></div>
-        <div id='nav_dropdown'>
-          <ul>
-            <li>Ryan Harris</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li>Software Developer</li>
-          </ul>
-        </div>
+        <div className='nav_title'>Ryan Harris</div>
+        <ul id='nav_list'>
+          <li className='nav_item'> | </li>
+          <li className='nav_item'>
+            <a>Projects</a>
+          </li>
+          <li className='nav_item'> | </li>
+          <li className='nav_item'>
+            <a href='/about'>
+              About
+            </a>
+          </li>
+          <li className='nav_item'> | </li>
+          <li className='nav_item'>
+            <button type='button'>Contact</button>
+          </li>
+          <li className='nav_item'> | </li>
+        </ul>
+        <div className='nav_title'>Software Developer</div>
+        
 
 
 
