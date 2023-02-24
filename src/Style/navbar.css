@@ -90,3 +90,68 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+#contact_view {
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 40vw;
+    height: 225px;
+    border: 3px solid lightskyblue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+}
+
+#contact_header {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.contact_message {
+    width: 65%;
+    margin: 5px auto;
+    font-size: 16px;
+}
+
+.contact_message:hover {
+    cursor: default;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+#contact_btn {
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 30px;
+}
+
+#contact_btn:hover {
+    color: black;
+    background-color: lightskyblue;
+    cursor: pointer;
+}
+
+#contact_iconList {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 10px auto 5px auto;
+}
+
+.contact_icon a:hover {
+    cursor: pointer;
+}
+
+.fa-xl {
+    color: lightskyblue;
+}

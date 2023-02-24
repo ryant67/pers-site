@@ -1,6 +1,6 @@
 import '../Style/navbar.css';
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function Navbar() {
 
@@ -30,7 +30,14 @@ export default function Navbar() {
       <div id='nav_view'>
         <div
           id='top'
-          style={{height: '0', width: '0'}}></div>
+          style={{
+            height: '0',
+            width: '0',
+            position: 'absolute',
+            top: '0',
+            left: '0',
+          }}>
+          </div>
         <div className='nav_title'>Ryan Harris</div>
         <ul id='nav_list'>
           <li className='nav_item'> | </li>
@@ -95,7 +102,45 @@ export default function Navbar() {
       
       {contactStatus === true
         ?
-        <div>True Contact</div>
+        <div>
+          <div className='whole_view'></div>
+          <div id='contact_view'>
+            <div id='contact_header'>
+              Contact Information
+            </div>
+            <hr style={{
+              width: '90%',
+              color: 'black',
+            }} />
+            <div className='contact_message'>
+              Phone Number: (817)300-0711
+            </div>
+            <div className='contact_message'>
+              Email: ryan.t.harris67@gmail.com
+            </div>
+            <div id='contact_iconList'>
+              <div className='contact_icon'>
+                <a target='_blank' href='https://www.linkedin.com/in/ryantharris/'>
+                  <i class="fa-brands fa-xl fa-linkedin"></i>
+                </a>
+              </div>
+              <div className='contact_icon'>
+                <a target='_blank' href='https://github.com/ryant67'>
+                  <i class="fa-brands fa-xl fa-github"></i>
+                </a>
+              </div>
+              <div className='contact_icon'>
+                <a target='_blank' href='https://alumni.codeup.com/students/1657'>
+                  <i class="fa-solid fa-xl fa-person-rays"></i>
+                </a>
+              </div>
+            </div>
+            <button type='button' id='contact_btn'
+              onClick={handleContact}>
+              Close
+            </button>  
+          </div>
+        </div>
         :
         <div></div>}
 
