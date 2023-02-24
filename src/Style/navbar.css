@@ -61,11 +61,32 @@
 }
 
 #dropdown_view {
-    width: 250px;
+    width: 600px;
     height: auto;
     background-color: lightseagreen;
     position: absolute;
     top: 80px;
     left: 400px;
     border-radius: 25px;
+}
+
+#dropdown_list {
+    padding: 0;
+}
+
+.dropdown_item {
+    width: 90%;
+    list-style: none;
+    margin: 5px auto;
+}
+
+.dropdown_item a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.dropdown_item a:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }

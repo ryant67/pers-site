@@ -35,7 +35,10 @@ export default function Navbar() {
         <ul id='nav_list'>
           <li className='nav_item'> | </li>
           <li className='nav_item'>
-            <a onMouseEnter={handleDropdown}>
+            <a onMouseEnter={(e) => {
+              e.preventDefault()
+              setDropStatus(true)
+            }}>
               Projects
             </a>
           </li>
@@ -63,13 +66,27 @@ export default function Navbar() {
           onMouseLeave={handleDropdown}>
           <ul id='dropdown_list'>
             <li className='dropdown_item'>
-              Calculator
+              <a href='/calc'>
+                Calculator
+              </a>
             </li>
+            <hr style={{
+              width: '92%', margin: '0 auto', color: 'white'
+            }} />
             <li className='dropdown_item'>
-              Calculator
+              <a>To Be Determined...</a>
             </li>
+            <hr style={{
+              width: '92%', margin: '0 auto', color: 'white'
+            }} />
             <li className='dropdown_item'>
-              Calculator
+              <a>To Be Determined...</a>
+            </li>
+            <hr style={{
+              width: '92%', margin: '0 auto', color: 'white'
+            }} />
+            <li className='dropdown_item'>
+              <a>To Be Determined...</a>
             </li>
           </ul>
         </div>
