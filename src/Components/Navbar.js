@@ -35,7 +35,7 @@ export default function Navbar() {
         <ul id='nav_list'>
           <li className='nav_item'> | </li>
           <li className='nav_item'>
-            <a onClick={handleDropdown}>
+            <a onMouseEnter={handleDropdown}>
               Projects
             </a>
           </li>
@@ -59,7 +59,8 @@ export default function Navbar() {
 
       {dropStatus === true
         ?
-        <div id='dropdown_view'>
+        <div id='dropdown_view'
+          onMouseLeave={handleDropdown}>
           <ul id='dropdown_list'>
             <li className='dropdown_item'>
               Calculator
