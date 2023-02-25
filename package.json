@@ -16,7 +16,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://ryant67.github.io",
+  "homepage": "https://ryant67.github.io/portfolio-project",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
