@@ -1,4 +1,4 @@
-#register_view {
+#reg_view {
     margin: 0;
     position: absolute;
     top: 50%;
@@ -15,12 +15,12 @@
     background-color: inherit;
 }
 
-#register_directions {
+#reg_directions {
     width: 90%;
     margin: auto;
 }
 
-#register_header {
+#reg_header {
     font-size: 45px;
 }
 
@@ -98,6 +98,99 @@
     flex-direction: column;
     flex-wrap: wrap;
     background-color: inherit;
+}
+
+#register_view {
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 40vw;
+    height: 450px;
+    border: 3px solid rgb(0, 216, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+}
+
+#register_header {
+    margin-top: 10px;
+    font-size: 40px;
+}
+
+#register_message {
+    width: 80%;
+    margin: 10px auto;
+    font-size: 20px;
+}
+
+#register_submessage {
+    width: 80%;
+    margin: 5px auto;
+    font-size: 14px;
+}
+
+#register_submessage a {
+    color: rgb(0, 216, 255);
+    text-decoration: none;
+}
+
+#register_submessage a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#loading_image img {
+    width: 60%;
+    height: 200px;
+}
+
+#pass_view {
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 40vw;
+    height: 200px;
+    border: 3px solid lightcoral;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+}
+
+#pass_header {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+#pass_message {
+    width: 70%;
+    margin: 10px auto;
+    font-size: 15px;
+}
+
+#pass_btn {
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 30px;
+}
+
+#pass_btn:hover {
+    color: black;
+    background-color: lightcoral;
+    cursor: pointer;
 }
 
 #info_text {

@@ -3,6 +3,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoremIpsum } from 'react-lorem-ipsum';
+import loading from '../Images/loading.gif';
 
 export default function RegisterDis() {
 
@@ -15,6 +16,17 @@ export default function RegisterDis() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [confPassword, setConfPassword] = useState('');
+  const [regModal, setRegModal] = useState(false);
+  const [passModal, setPassModal] = useState(false);
+
+  const handlePass = (e) => {
+    e.preventDefault()
+    if (passModal === false) {
+      setPassModal(true);
+    } else {
+      setPassModal(false);
+    }
+  }
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -35,11 +47,17 @@ export default function RegisterDis() {
         setUserName('');
         setPassword('');
         setConfPassword('');
-        alert('Congratulations, your account was created successfully.' +  
-          'You will now be redirected to our Login Page.')
-        navigate('/login');
+        setRegModal(true);
+        
+        setTimeout(() => {
+          setRegModal(false);
+          navigate('/login');
+        }, 4000)
+
       } else {
-        alert('Sorry, but your passwords do not match, please try again!');
+        setPassword('');
+        setConfPassword('');
+        setPassModal(true);
       }
     } catch (err) {
       console.log(err);
@@ -56,12 +74,12 @@ export default function RegisterDis() {
 
   return (
     <div>
-      <div id='register_view'>
-        <div id='register_directions'>
-          <div id='register_header'>
+      <div id='reg_view'>
+        <div id='reg_directions'>
+          <div id='reg_header'>
             Create an Account
           </div>
-          <div id='register_message'>Please fill out the below fields.</div>
+          <div id='reg_message'>Please fill out the below fields.</div>
         </div>
         <form onSubmit={submitForm}>
 
@@ -185,6 +203,59 @@ export default function RegisterDis() {
         </div>
 
       </div>
+
+      {regModal === true
+        ?
+        <div>
+          <div className='whole_view'></div>
+          <div id='register_view'>
+            <div id='register_header'>Congratulations...</div>
+            <hr style={{
+              width: '90%',
+              color: 'black',
+            }} />
+            <div id='register_message'>
+              You've successfully registered for an account <br />
+              you'll now be transfered to the login page!
+            </div>
+            <div id='loading_image'>
+              <img src={loading} />
+            </div>
+            <div id='register_submessage'>
+              If you're not automatically redirected <br />
+              <a href='/login'>
+                click here
+              </a>
+            </div>
+          </div>
+        </div>
+        :
+        <div></div>}
+      
+      {passModal === true
+        ?
+        <div>
+          <div className='whole_view'></div>
+          <div id='pass_view'>
+            <div id='pass_header'>Ooops! Something went wrong!</div>
+            <hr style={{
+              width: '90%',
+              color: 'black',
+            }} />
+            <div id='pass_message'>
+              We apologize, but there was an error
+              registering you an accout.
+              Please try again!
+            </div>
+            <button type='button' id='pass_btn'
+              onClick={handlePass}>
+              Close
+            </button>  
+          </div>
+        </div>
+        :
+        <div></div>}
+
     </div>
   )
 }
