@@ -74,11 +74,15 @@
     margin: 30px auto 20px auto;
 }
 
-#reg_options a {
+#reg_options button {
+    border: none;
+    background-color: inherit;
+    text-decoration: underline;
     color: black;
+    font-size: 16px;
 }
 
-#reg_options a:hover {
+#reg_options button:hover {
     cursor: pointer;
     color: blueviolet;
 }

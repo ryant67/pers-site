@@ -64,11 +64,15 @@
     margin-bottom: 10px;
 }
 
-#reg_redirect a {
+#reg_redirect button {
+    border: none;
+    background-color: inherit;
+    text-decoration: underline;
     color: black;
+    font-size: 16px;
 }
 
-#reg_redirect a:hover {
+#reg_redirect button:hover {
     cursor: pointer;
     color: blueviolet;
 }

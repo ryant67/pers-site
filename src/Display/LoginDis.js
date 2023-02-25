@@ -193,9 +193,13 @@ export default function LoginDis() {
           <div id='reg_redirect'>
             Don't have an account?
             <div>
-              <a href='/register'>
+              <button type='button'
+                onClick={(e) => {
+                  e.preventDefault()
+                  navigate('/register')
+                }}>
                 Register
-              </a>
+              </button>
             </div>
           </div>
 

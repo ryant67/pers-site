@@ -189,9 +189,13 @@ export default function RegisterDis() {
           <div id='login_redirect'>
             Already have an account?
             <div>
-              <a href='/login'>
+              <button type='button'
+                onClick={(e) => {
+                  e.preventDefault()
+                  navigate('/login')
+                }}>
                 Login
-              </a>
+              </button>
             </div>
           </div>
         </div>
