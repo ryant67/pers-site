@@ -1,11 +1,20 @@
 import '../Style/navbar.css';
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import logout from '../Images/logout.png';
 
 export default function Navbar() {
 
+  const navigate = useNavigate();
   const [dropStatus, setDropStatus] = useState(false);
   const [contactStatus, setContactStatus] = useState(false);
+
+  const handleLogout = (e) => {
+    e.preventDefault()
+    localStorage.clear()
+    navigate('/login')
+  }
 
   const handleDropdown = (e) => {
     e.preventDefault()
@@ -65,6 +74,11 @@ export default function Navbar() {
           <li className='nav_item'> | </li>
         </ul>
         <div className='nav_title'>Software Developer</div>
+        <div id='logout_icon'>
+          <img
+            src={logout}
+            onClick={handleLogout} />
+        </div>
       </div>
 
       {dropStatus === true
@@ -121,17 +135,17 @@ export default function Navbar() {
             <div id='contact_iconList'>
               <div className='contact_icon'>
                 <a target='_blank' href='https://www.linkedin.com/in/ryantharris/'>
-                  <i class="fa-brands fa-xl fa-linkedin"></i>
+                  <i className="fa-brands fa-xl fa-linkedin"></i>
                 </a>
               </div>
               <div className='contact_icon'>
                 <a target='_blank' href='https://github.com/ryant67'>
-                  <i class="fa-brands fa-xl fa-github"></i>
+                  <i className="fa-brands fa-xl fa-github"></i>
                 </a>
               </div>
               <div className='contact_icon'>
                 <a target='_blank' href='https://alumni.codeup.com/students/1657'>
-                  <i class="fa-solid fa-xl fa-person-rays"></i>
+                  <i className="fa-solid fa-xl fa-person-rays"></i>
                 </a>
               </div>
             </div>
