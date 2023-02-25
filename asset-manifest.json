@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pers-site/static/css/main.e410720b.css",
+    "main.js": "/pers-site/static/js/main.8b5a9638.js",
+    "static/media/loading.gif": "/pers-site/static/media/loading.ca5fd7ad8f5d9a152ece.gif",
+    "static/media/landing.png": "/pers-site/static/media/landing.970ad6bbff16763bb15b.png",
+    "index.html": "/pers-site/index.html",
+    "main.e410720b.css.map": "/pers-site/static/css/main.e410720b.css.map",
+    "main.8b5a9638.js.map": "/pers-site/static/js/main.8b5a9638.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e410720b.css",
+    "static/js/main.8b5a9638.js"
+  ]
+}
