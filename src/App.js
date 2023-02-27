@@ -8,7 +8,6 @@ import LoginDis from './Display/LoginDis';
 import RegisterDis from './Display/RegisterDis';
 import HomeDis from './Display/HomeDis';
 import ErrorDis from './Display/ErrorDis';
-import TestDis from './Display/TestDis';
 import AboutDis from './Display/AboutDis';
 import CalcDis from './Display/CalcDis';
 
@@ -20,7 +19,6 @@ export default function App() {
         <Route path='/login' element={<LoginDis />} />
         <Route path='/register' element={<RegisterDis />} />
         <Route path='/home' element={<HomeDis />} />
-        <Route path='/test' element={<TestDis />} />
         <Route path='/about' element={<AboutDis />} />
         <Route path='/calc' element={<CalcDis />} />
         
