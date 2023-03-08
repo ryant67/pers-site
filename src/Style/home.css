@@ -1,6 +1,5 @@
 #home_view {
     margin: 0 auto;
-    height: auto;
     width: 99%;
     min-height: 491px;
 }
@@ -16,6 +15,7 @@
 #home_banner span:hover {
     cursor: pointer;
     text-decoration: underline;
+    text-decoration-color: rgb(0, 216, 255);
 }
 
 #home_message {
@@ -35,4 +35,75 @@
 #home_message div {
     width: 98%;
     margin: auto;
+}
+
+#home_divider {
+    width: 98%;
+    height: 6px;
+    background-color: black;
+    border: none;
+}
+
+#knicks_view {
+    width: 98%;
+    margin: 50px auto;
+}
+
+#fuzzBuzz_view {
+    width: 30%;
+    min-height: 300px;
+    border: 3px solid lightgreen;
+    border-radius: 15px;
+}
+
+#fuzzBuzz_header {
+    width: 98%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+#fuzzBuzz_directions {
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 12px;
+}
+
+#fuzzBuzz_divider {
+    width: 96%;
+    height: 2px;
+    border: none;
+    background-color: black;
+}
+
+#fuzzBuzz_selection {
+    width: 98%;
+    margin: 20px auto;
+}
+
+#fuzzBuzz_selection form {
+    width: 90%;
+    margin: auto;
+}
+
+#fuzzBuzz_input {
+    height: 27px;
+    width: 60%;
+    margin: 0 10px;
+    border: none;
+    border-left: 2px solid rgb(0, 216, 255);
+    border-right: 2px solid rgb(0, 216, 255);
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+#fuzz_btn {
+    padding: 0;
+    height: 28px;
+    width: 25%;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(0, 216, 255);
 }
