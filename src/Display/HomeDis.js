@@ -22,7 +22,28 @@ export default function HomeDis() {
 
   const fuzzSubmit = (e) => {
     e.preventDefault();
-    console.log(fuzzBuzzNum)
+    for (let i = 1; i <= fuzzBuzzNum; i++) {
+      if (i % 15 === 0) {
+        document.getElementById('fuzz_list').innerHTML +=
+        '<li>' + 'FuzzBuzz' + '</li>'
+      } else if (i % 3 === 0) {
+        document.getElementById('fuzz_list').innerHTML +=
+        '<li>' + 'Fuzz' + '</li>'
+      } else if (i % 5 === 0) {
+        document.getElementById('fuzz_list').innerHTML +=
+        '<li>' + 'Buzz' + '</li>'
+      } else {
+        document.getElementById('fuzz_list').innerHTML +=
+        '<li>' + i + '</li>'
+      }
+    }
+    setFuzzBuzzNum('');
+  }
+
+  const handleClear = (e) => {
+    e.preventDefault();
+    document.getElementById('fuzz_list').innerHTML = 
+      " "
   }
 
   const accessCheck = () => {
@@ -81,21 +102,33 @@ export default function HomeDis() {
                   value={fuzzBuzzNum}
                   onChange={e => setFuzzBuzzNum(e.target.value)} />
                 <button
-                  id='fuzz_btn'
+                  className='fuzz_btn'
                   type='submit'>
                   <i className="fa-solid fa-lg fa-check"></i>
+                </button>
+                <button
+                  className='fuzz_btn'
+                  type='button'
+                  onClick={handleClear}>
+                  <i className="fa-solid fa_lg fa-x"></i>
                 </button>
 
               </form>
 
             </div>
 
-            <hr id='fuzzBuzz_divider'/>
+            <hr id='fuzzBuzz_divider' />
+            
+            <div id='fuzz_results'>
+              <ul id='fuzz_list'>
+                
+              </ul>
+            </div>
 
           </div>
 
         </div>
-          
+
         <div id='home_message'>
           <div>
             Welcome to your home page. I truly am glad that you're here as
