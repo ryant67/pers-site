@@ -1,0 +1,38 @@
+#home_view {
+    margin: 0 auto;
+    height: auto;
+    width: 99%;
+    min-height: 491px;
+}
+
+#home_banner {
+    width: 98%;
+    margin: 15px auto;
+    text-align: center;
+    font-size: 45px;
+    cursor: default;
+}
+
+#home_banner span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#home_message {
+    width: 80%;
+    margin: 15px auto;
+    text-align: center;
+    font-size: 15px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 8px;
+}
+
+#home_message:hover {
+    cursor: default;
+}
+
+#home_message div {
+    width: 98%;
+    margin: auto;
+}
