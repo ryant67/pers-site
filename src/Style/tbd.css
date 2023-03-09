@@ -1,7 +1,6 @@
 #whole_tbd {
-    position: absolute;
-    height: 100vh;
     width: 100%;
+    min-height: 491px;
 }
 
 #tbd_text {
