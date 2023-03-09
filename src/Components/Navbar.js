@@ -16,6 +16,13 @@ export default function Navbar() {
     navigate('/login')
   }
 
+  const handleHome = (e) => {
+    e.preventDefault();
+    if (URL !== 'http://localhost:3000/home') {
+      navigate('/home')
+    }
+  }
+
   const handleDropdown = (e) => {
     e.preventDefault()
     if (dropStatus === false) {
@@ -47,7 +54,11 @@ export default function Navbar() {
             left: '0',
           }}>
           </div>
-        <div className='nav_title'>Ryan Harris</div>
+        <div
+          className='nav_title'
+          onClick={handleHome}>
+          Ryan Harris
+        </div>
         <ul id='nav_list'>
           <li className='nav_item'> | </li>
           <li className='nav_item'>
