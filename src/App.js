@@ -10,6 +10,7 @@ import HomeDis from './Display/HomeDis';
 import ErrorDis from './Display/ErrorDis';
 import AboutDis from './Display/AboutDis';
 import CalcDis from './Display/CalcDis';
+import TbdDis from './Display/TbdDis';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path='/home' element={<HomeDis />} />
         <Route path='/about' element={<AboutDis />} />
         <Route path='/calc' element={<CalcDis />} />
+        <Route path='/tbd' element={<TbdDis />} />
         
         {/* Error 404 page for unfound pages */}
         <Route path='*' element={<ErrorDis />} />

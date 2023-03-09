@@ -95,19 +95,19 @@ export default function Navbar() {
               width: '92%', margin: '0 auto', color: 'white'
             }} />
             <li className='dropdown_item'>
-              <a>To Be Determined...</a>
+              <a href='/tbd'>To Be Determined...</a>
             </li>
             <hr style={{
               width: '92%', margin: '0 auto', color: 'white'
             }} />
             <li className='dropdown_item'>
-              <a>To Be Determined...</a>
+              <a href='/tbd'>To Be Determined...</a>
             </li>
             <hr style={{
               width: '92%', margin: '0 auto', color: 'white'
             }} />
             <li className='dropdown_item'>
-              <a>To Be Determined...</a>
+              <a href='/tbd'>To Be Determined...</a>
             </li>
           </ul>
         </div>
