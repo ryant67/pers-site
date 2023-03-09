@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Style/error.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function ErrorDis() {
 
