@@ -1,9 +1,24 @@
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import '../Style/calc.css';
-import React from 'react'
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function CalcDis() {
+
+  const navigate = useNavigate();
+
+  const accessCheck = () => {
+    localStorage.getItem('userName') !== null 
+      ? navigate('/calc')
+      : navigate('/login')
+  }
+
+  useEffect(() => {
+    accessCheck()
+  }, [])
+
   return (
     <div>
 
