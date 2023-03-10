@@ -22,21 +22,31 @@ export default function HomeDis() {
 
   const fuzzSubmit = (e) => {
     e.preventDefault();
-    for (let i = 1; i <= fuzzBuzzNum; i++) {
-      if (i % 15 === 0) {
-        document.getElementById('fuzz_list').innerHTML +=
-        '<li>' + 'FuzzBuzz' + '</li>'
-      } else if (i % 3 === 0) {
-        document.getElementById('fuzz_list').innerHTML +=
-        '<li>' + 'Fuzz' + '</li>'
-      } else if (i % 5 === 0) {
-        document.getElementById('fuzz_list').innerHTML +=
-        '<li>' + 'Buzz' + '</li>'
-      } else {
-        document.getElementById('fuzz_list').innerHTML +=
-        '<li>' + i + '</li>'
+
+    document.getElementById('fuzz_list').innerHTML = 
+      ""
+
+    if (fuzzBuzzNum === '') {
+      document.getElementById('fuzz_list').innerHTML =
+        '<li>' + 'No number was selected' + '</li>'
+    } else {
+      for (let i = 1; i <= fuzzBuzzNum; i++) {
+        if (i % 15 === 0) {
+          document.getElementById('fuzz_list').innerHTML +=
+          '<li>' + 'FuzzBuzz' + '</li>'
+        } else if (i % 3 === 0) {
+          document.getElementById('fuzz_list').innerHTML +=
+          '<li>' + 'Fuzz' + '</li>'
+        } else if (i % 5 === 0) {
+          document.getElementById('fuzz_list').innerHTML +=
+          '<li>' + 'Buzz' + '</li>'
+        } else {
+          document.getElementById('fuzz_list').innerHTML +=
+          '<li>' + i + '</li>'
+        }
       }
     }
+
     setFuzzBuzzNum('');
   }
 
@@ -121,7 +131,6 @@ export default function HomeDis() {
             
             <div id='fuzz_results'>
               <ul id='fuzz_list'>
-                
               </ul>
             </div>
 
