@@ -54,10 +54,12 @@ export default function Navbar() {
             left: '0',
           }}>
           </div>
-        <div
-          className='nav_title'
-          onClick={handleHome}>
-          Ryan Harris
+        <div className='nav_title'>
+          <span
+            style={{cursor: 'pointer'}}
+            onClick={handleHome}>
+            Ryan Harris
+          </span>
         </div>
         <ul id='nav_list'>
           <li className='nav_item'> | </li>
