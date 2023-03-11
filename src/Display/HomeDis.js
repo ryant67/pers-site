@@ -33,16 +33,16 @@ export default function HomeDis() {
       for (let i = 1; i <= fuzzBuzzNum; i++) {
         if (i % 15 === 0) {
           document.getElementById('fuzz_list').innerHTML +=
-          '<li>' + 'FuzzBuzz' + '</li>'
+          '<li class=\'fuzz_listItem\'>' + 'FuzzBuzz' + '</li>'
         } else if (i % 3 === 0) {
           document.getElementById('fuzz_list').innerHTML +=
-          '<li>' + 'Fuzz' + '</li>'
+          '<li class=\'fuzz_listItem\'>' + 'Fuzz' + '</li>'
         } else if (i % 5 === 0) {
           document.getElementById('fuzz_list').innerHTML +=
-          '<li>' + 'Buzz' + '</li>'
+          '<li class=\'fuzz_listItem\'>' + 'Buzz' + '</li>'
         } else {
           document.getElementById('fuzz_list').innerHTML +=
-          '<li>' + i + '</li>'
+          '<li class=\'fuzz_listItem\'>' + i + '</li>'
         }
       }
     }
@@ -129,8 +129,7 @@ export default function HomeDis() {
             <hr id='fuzzBuzz_divider' />
             
             <div id='fuzz_results'>
-              <ul id='fuzz_list'>
-              </ul>
+              <ul id='fuzz_list'></ul>
             </div>
 
           </div>
