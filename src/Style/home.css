@@ -8,12 +8,15 @@
 }
 
 #home_banner {
-    width: 98%;
+    width: 90%;
+    height: 80px;
+    line-height: 70px;
     margin: 15px auto;
     text-align: center;
     text-shadow: 1px 1px grey;
     font-size: 45px;
     cursor: default;
+    border-bottom: 3px solid black;
 }
 
 #home_banner span:hover {
@@ -23,9 +26,9 @@
 }
 
 #home_message {
-    width: 60%;
-    height: 85px;
-    margin: 50px auto;
+    width: 98%;
+    height: 88px;
+    margin: 0 auto;
     text-align: center;
     font-size: 15px;
     border-left: 2px solid black;
@@ -42,21 +45,24 @@
     margin: 2px auto 0 auto;
 }
 
-#home_divider {
-    width: 98%;
-    height: 6px;
-    background-color: black;
-    border: none;
+#challenge_view {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: row;
 }
 
-#knicks_view {
-    width: 38%;
-    margin: 50px auto;
+#smChallenge_view {
+    width: 55%;
+    min-height: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
 }
 
 #fuzzBuzz_view {
-    width: 85%;
-    margin: auto;
+    width: 35%;
+    margin: 20px auto;
     min-height: 300px;
     border: 3px solid lightgreen;
     border-radius: 15px;
@@ -137,5 +143,9 @@
 #date_view {
     width: 98%;
     min-height: 100px;
-    margin: 10px auto;
+    margin: 20px auto;
+}
+
+#todaysDate {
+    text-align: center;
 }

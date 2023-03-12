@@ -10,30 +10,39 @@ export default function HomeDis() {
   const [bannerCheck, setBannerCheck] = useState(false);
   const [fuzzBuzzNum, setFuzzBuzzNum] = useState('');
 
-  // converting age to days
+  // converting age to days -----------------------------------------------------
+
   const [date] = useState(Date.now());
   const [milliDay] = useState(86400000);
   const [days, setDays] = useState();
   const [months, setMonths] = useState();
   const [years, setYears] = useState();
 
-  const newDate = () => {
-    let d;
-    let m;
-    let y;
+  const dateInfo = () => {
+    setInterval(() => {
+      document.getElementById('todaysDate').innerText = Date();
+    }, 100);
 
-    d = date / milliDay
+      let d;
+      let m;
+      let y;
 
-    m = d / 30
+      d = date / milliDay
 
-    y = m / 12
+      m = d / 30
 
-    console.log(Math.trunc(d));
-    console.log(Math.trunc(m));
-    console.log(Math.trunc(y));
+      y = m / 12
+
+      setDays(Math.trunc(d));
+      setMonths(Math.trunc(m));
+      setYears(Math.trunc(y))
+
+      console.log(Math.trunc(d));
+      console.log(Math.trunc(m));
+      console.log(Math.trunc(y));
   }
-
   
+  // ---------------------------------------------------------------------------- 
 
   const bannerChange = (e) => {
     e.preventDefault();
@@ -87,6 +96,7 @@ export default function HomeDis() {
   
   useEffect(() => {
     accessCheck();
+    dateInfo();
   }, [])
 
   return (
@@ -109,11 +119,9 @@ export default function HomeDis() {
               }
           ! We're glad you're here!
         </div>
+        <div id='challenge_view'>
 
-        <hr id='home_divider'/>
-        
-        <div id='knicks_view'> 
-          
+          {/* left side flex row */}
           <div id='fuzzBuzz_view'>
             <div id='fuzzBuzz_header'>
               Fuzz Buzz Challenge
@@ -123,11 +131,8 @@ export default function HomeDis() {
               Pick any number you'd like. (Remember though: the higher the number
               the longer the list of numbers)
             </div>
-
             <div id='fuzzBuzz_selection'>
-
               <form onSubmit={fuzzSubmit}>
-
                 <input
                   type='number'
                   id='fuzzBuzz_input'
@@ -145,33 +150,34 @@ export default function HomeDis() {
                   onClick={handleClear}>
                   <i className="fa-solid fa_lg fa-x"></i>
                 </button>
-
               </form>
-
             </div>
-
-            <hr id='fuzzBuzz_divider' />
-            
+            <hr id='fuzzBuzz_divider' />           
             <div id='fuzz_results'>
               <ul id='fuzz_list'></ul>
             </div>
-
           </div>
 
-        </div>
+          {/* right side flex column */}
+          <div id='smChallenge_view'>
 
-        <div id='home_message'>
+            {/* right side layer 1 */}
+            <div id='home_message'>
+              <div>
+                Welcome to your home page. I truly am glad that you're here as
+                this marks my first major solo project that I am quite excited to showcase.
+                To start off, there are a few small knicks that show DOM manipulation (some hidden,
+                some visible) and just general things that came to mind that I thought would be
+                cool to add. Of course, there will be more added as time goes on. So I hope you enjoy!
+              </div>
+            </div>
+            
+            {/* right side layer 2 */}
+            <div id='date_view'>
+              <div id='todaysDate'></div>
 
-          <div>
-            Welcome to your home page. I truly am glad that you're here as
-            this marks my first major solo project that I am quite excited to showcase.
-            To start off, there are a few small knicks that show DOM manipulation (some hidden,
-            some visible) and just general things that came to mind that I thought would be
-            cool to add. Of course, there will be more added as time goes on. So I hope you enjoy!
-          </div>
-          
-          <div id='date_view'>
-            <div id='todaysDate'></div>
+            </div>
+
           </div>
 
         </div>
