@@ -1,6 +1,5 @@
 import '../Style/register.css';
-import React from 'react'
-import { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoremIpsum } from 'react-lorem-ipsum';
 import loading from '../Images/loading.gif';
