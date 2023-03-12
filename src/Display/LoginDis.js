@@ -1,5 +1,5 @@
 import '../Style/login.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoremIpsum } from 'react-lorem-ipsum';
 

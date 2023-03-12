@@ -1,7 +1,7 @@
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import '../Style/home.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function HomeDis() {
