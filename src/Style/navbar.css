@@ -30,7 +30,7 @@
 }
 
 .nav_item a:hover {
-    color: lightseagreen;
+    color: lightcoral;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -60,6 +60,12 @@
     line-height: 80px;
     text-align: center;
     cursor: default;
+}
+
+.nav_title span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: lightcoral;
 }
 
 #logout_icon {

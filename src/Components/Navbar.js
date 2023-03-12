@@ -55,9 +55,7 @@ export default function Navbar() {
           }}>
           </div>
         <div className='nav_title'>
-          <span
-            style={{cursor: 'pointer'}}
-            onClick={handleHome}>
+          <span onClick={handleHome}>
             Ryan Harris
           </span>
         </div>

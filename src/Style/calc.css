@@ -15,6 +15,7 @@
 
 #calc_header {
     font-size: 50px;
+    text-shadow: 1px 1px grey;
 }
 
 #whole_calc {
@@ -42,7 +43,7 @@
     padding: 5px 20px;
     text-align: end;
     border-bottom: 2px solid black;
-    font-size: 50px;
+    font-size: 55px;
     line-height: 80px;
 }
 
@@ -60,7 +61,8 @@
     margin: auto;
     text-align: center;
     line-height: 65px;
-    background-color: rgb(0, 216, 255);
+    background-color: darkgrey;
+    color: rgb(0, 216, 255);
     border-radius: 15px;
     font-size: 30px;
 }
@@ -71,7 +73,8 @@
     margin: auto;
     text-align: center;
     line-height: 65px;
-    background-color: rgb(0, 216, 255);
+    background-color: darkgrey;
+    color: rgb(0, 216, 255);
     border-radius: 15px;
     font-size: 30px;
 }
@@ -82,8 +85,27 @@
     margin: auto;
     text-align: center;
     line-height: 65px;
-    background-color: rgb(21, 255, 0);
+    background-color: grey;
+    color: rgb(21, 255, 0);
     border-radius: 15px;
     font-size: 30px;
     font-weight: bold;
+}
+
+.number_btn:hover {
+    cursor: pointer;
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+#big_btn:hover {
+    cursor: pointer;
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+.operator_btn:hover {
+    cursor: pointer;
+    font-size: 45px;
+    font-weight: bolder;
 }
