@@ -18,10 +18,14 @@ export default function HomeDis() {
   const [months, setMonths] = useState();
   const [years, setYears] = useState();
 
-  const dateInfo = () => {
-    setInterval(() => {
-      document.getElementById('todaysDate').innerText = Date();
-    }, 100);
+  const dateDisplay = () => {
+    const date = new Date();
+
+      document.getElementById('todaysDate').innerText =
+        date.toDateString() + (' ') + date.toLocaleTimeString()
+  }
+
+  const dateInfo = () => {    
 
       let d;
       let m;
@@ -96,7 +100,10 @@ export default function HomeDis() {
   
   useEffect(() => {
     accessCheck();
-    dateInfo();
+    setInterval(() => {
+      dateDisplay()
+    }, 100)
+    
   }, [])
 
   return (
