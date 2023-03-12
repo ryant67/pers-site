@@ -11,6 +11,31 @@ export default function HomeDis() {
   const [bannerCheck, setBannerCheck] = useState(false);
   const [fuzzBuzzNum, setFuzzBuzzNum] = useState('');
 
+  // converting age to days
+  const [date] = useState(Date.now());
+  const [milliDay] = useState(86400000);
+  const [days, setDays] = useState();
+  const [months, setMonths] = useState();
+  const [years, setYears] = useState();
+
+  const newDate = () => {
+    let d;
+    let m;
+    let y;
+
+    d = date / milliDay
+
+    m = d / 30
+
+    y = m / 12
+
+    console.log(Math.trunc(d));
+    console.log(Math.trunc(m));
+    console.log(Math.trunc(y));
+  }
+
+  
+
   const bannerChange = (e) => {
     e.preventDefault();
     if (bannerCheck === false) {
@@ -137,13 +162,19 @@ export default function HomeDis() {
         </div>
 
         <div id='home_message'>
+
           <div>
             Welcome to your home page. I truly am glad that you're here as
             this marks my first major solo project that I am quite excited to showcase.
             To start off, there are a few small knicks that show DOM manipulation (some hidden,
             some visible) and just general things that came to mind that I thought would be
             cool to add. Of course, there will be more added as time goes on. So I hope you enjoy!
-          </div>  
+          </div>
+          
+          <div id='date_view'>
+            <div id='todaysDate'></div>
+          </div>
+
         </div>
 
       </div>
