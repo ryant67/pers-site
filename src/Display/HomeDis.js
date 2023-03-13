@@ -7,43 +7,25 @@ import { useNavigate } from 'react-router-dom';
 export default function HomeDis() {
 
   const navigate = useNavigate();
+  const date = new Date();
   const [bannerCheck, setBannerCheck] = useState(false);
   const [fuzzBuzzNum, setFuzzBuzzNum] = useState('');
 
   // converting age to days -----------------------------------------------------
 
-  const [date] = useState(Date.now());
   const [milliDay] = useState(86400000);
-  const [days, setDays] = useState();
-  const [months, setMonths] = useState();
-  const [years, setYears] = useState();
+  const [days, setDays] = useState('');
+  const [months, setMonths] = useState('');
+  const [years, setYears] = useState('');
+  const [birthDay, setBirthDay] = useState('');
+  const [birthMonth, setBirthMonth] = useState('');
+  const [birthYear, setBirthYear] = useState('');
 
   const dateDisplay = () => {
     const date = new Date();
 
       document.getElementById('todaysDate').innerText =
         date.toDateString() + (' ') + date.toLocaleTimeString()
-  }
-
-  const dateInfo = () => {    
-
-      let d;
-      let m;
-      let y;
-
-      d = date / milliDay
-
-      m = d / 30
-
-      y = m / 12
-
-      setDays(Math.trunc(d));
-      setMonths(Math.trunc(m));
-      setYears(Math.trunc(y))
-
-      console.log(Math.trunc(d));
-      console.log(Math.trunc(m));
-      console.log(Math.trunc(y));
   }
   
   // ---------------------------------------------------------------------------- 
@@ -86,6 +68,23 @@ export default function HomeDis() {
     setFuzzBuzzNum('');
   }
 
+  const birthSubmit = (e) => {
+    e.preventDefault()
+
+    let y = date.getFullYear() - birthYear;
+
+    document.getElementById('cumulative_birth').innerText = y
+
+    if (birthMonth > date.getMonth()) {
+      document.getElementById('cumulative_birth').innerText = y - 1
+    }
+    
+    setBirthMonth('');
+    setBirthDay('');
+    setBirthYear('');
+
+  }
+
   const handleClear = (e) => {
     e.preventDefault();
     document.getElementById('fuzz_list').innerHTML = 
@@ -100,9 +99,10 @@ export default function HomeDis() {
   
   useEffect(() => {
     accessCheck();
+
     setInterval(() => {
       dateDisplay()
-    }, 100)
+    }, 100);
     
   }, [])
 
@@ -182,6 +182,37 @@ export default function HomeDis() {
             {/* right side layer 2 */}
             <div id='date_view'>
               <div id='todaysDate'></div>
+
+              <form
+                onSubmit={birthSubmit}
+                id='birth_form'>
+                Enter your Birthday: {' '}
+                <input
+                  className='birthInput'
+                  placeholder='mm'
+                  value={birthMonth}
+                  onChange={e => setBirthMonth(e.target.value)} />
+                <span>/</span>
+                <input
+                  className='birthInput'
+                  placeholder='dd'
+                  value={birthDay}
+                  onChange={e => setBirthDay(e.target.value)} />
+                <span>/</span>
+                <input
+                  style={{width: '40px'}}
+                  className='birthInput'
+                  placeholder='yyyy'
+                  value={birthYear}
+                  onChange={e => setBirthYear(e.target.value)} />
+                <button
+                  id='birth_btn'
+                  type='submit'>
+                  <i className="fa-solid fa-lg fa-check"></i>
+                </button>
+              </form>
+
+              <div id='cumulative_birth'></div>
 
             </div>
 
