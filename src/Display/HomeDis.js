@@ -20,6 +20,7 @@ export default function HomeDis() {
   const [birthDay, setBirthDay] = useState('');
   const [birthMonth, setBirthMonth] = useState('');
   const [birthYear, setBirthYear] = useState('');
+  const [daysByMonth, setDaysByMonth] = useState('');
 
   const dateDisplay = () => {
     const date = new Date();
@@ -69,16 +70,60 @@ export default function HomeDis() {
   }
 
   const birthSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     let y = date.getFullYear() - birthYear;
+    let m = 12 - birthMonth + date.getMonth() + 1;
+    let d = daysByMonth - birthDay;
 
-    document.getElementById('cumulative_birth').innerText = y
+    // -----------------------------------------------------------
+    // Checking if the birth month has happened yet
+    // -----------------------------------------------------------
 
     if (birthMonth > date.getMonth()) {
-      document.getElementById('cumulative_birth').innerText = y - 1
+      document.getElementById('resulting_years').innerText =
+        'You are: ' + (y - 1) + ' years old.';
+      
+      document.getElementById('resulting_months').innerText =
+        'You are: ' + m + ' months old.';
+    } else {
+      document.getElementById('resulting_years').innerText =
+        'You are: ' + y + ' years old.';
+      
+      document.getElementById('resulting_months').innerText =
+        'You are: ' + (date.getMonth() + 1 - birthMonth) + ' months old.';
     }
     
+    // -----------------------------------------------------------
+    // Acquiring accurate days of the month
+    // -----------------------------------------------------------
+
+    if (birthMonth === '1' || birthMonth === '01') {
+      setDaysByMonth(31); // January
+    } else if (birthMonth === '2' || birthMonth === '02') {
+      setDaysByMonth(28); // February
+    } else if (birthMonth === '3' || birthMonth === '03') {
+      setDaysByMonth(31); // March
+    } else if (birthMonth === '4' || birthMonth === '04') {
+      setDaysByMonth(31); // April
+    } else if (birthMonth === '5' || birthMonth === '05') {
+      setDaysByMonth(31); // May
+    } else if (birthMonth === '6' || birthMonth === '06') {
+      setDaysByMonth(30); // June
+    } else if (birthMonth === '7' || birthMonth === '07') {
+      setDaysByMonth(31); // July
+    } else if (birthMonth === '8' || birthMonth === '08') {
+      setDaysByMonth(31); // August
+    } else if (birthMonth === '9' || birthMonth === '09') {
+      setDaysByMonth(30); // September
+    } else if (birthMonth === '10') {
+      setDaysByMonth(31); // October
+    } else if (birthMonth === '11') {
+      setDaysByMonth(30); // November
+    } else if (birthMonth === '12') {
+      setDaysByMonth(31); // December
+    }
+
     setBirthMonth('');
     setBirthDay('');
     setBirthYear('');
@@ -212,7 +257,11 @@ export default function HomeDis() {
                 </button>
               </form>
 
-              <div id='cumulative_birth'></div>
+              <div id='birth_results'>
+                <div id='resulting_years'></div>
+                <div id='resulting_months'></div>
+                <div id='resulting_days'></div>
+              </div>
 
             </div>
 
