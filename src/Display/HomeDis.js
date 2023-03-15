@@ -73,8 +73,23 @@ export default function HomeDis() {
     e.preventDefault();
 
     let y = date.getFullYear() - birthYear;
+    let yy = y - 1;
     let m = 12 - birthMonth + date.getMonth() + 1;
-    let d = daysByMonth - birthDay;
+    let mm = date.getMonth() + 1 - birthMonth;
+    let d = date.getDate() - birthDay;
+    let dd = date.getDate() + (daysByMonth - Number(birthDay));
+
+    // -----------------------------------------------------------
+    // Checking if the birth day has happened yet
+    // -----------------------------------------------------------
+
+    if (birthDay > date.getDate()) {
+      document.getElementById('resulting_days').innerText =
+        `You are ${dd} days old.`;
+    } else {
+      document.getElementById('resulting_days').innerText = 
+        `You are ${d} days old.`
+    }
 
     // -----------------------------------------------------------
     // Checking if the birth month has happened yet
@@ -82,16 +97,10 @@ export default function HomeDis() {
 
     if (birthMonth > date.getMonth()) {
       document.getElementById('resulting_years').innerText =
-        'You are: ' + (y - 1) + ' years old.';
-      
-      document.getElementById('resulting_months').innerText =
-        'You are: ' + m + ' months old.';
+        `You are ${yy} years, ${m} months old.`;
     } else {
       document.getElementById('resulting_years').innerText =
-        'You are: ' + y + ' years old.';
-      
-      document.getElementById('resulting_months').innerText =
-        'You are: ' + (date.getMonth() + 1 - birthMonth) + ' months old.';
+        `You are ${y} years, ${mm} months old.`;
     }
     
     // -----------------------------------------------------------
