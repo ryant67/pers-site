@@ -10,13 +10,10 @@ export default function HomeDis() {
   const date = new Date();
   const [bannerCheck, setBannerCheck] = useState(false);
   const [fuzzBuzzNum, setFuzzBuzzNum] = useState('');
+  const [textCounter, setTextCounter] = useState('');
 
   // converting age to days -----------------------------------------------------
 
-  const [milliDay] = useState(86400000);
-  const [days, setDays] = useState('');
-  const [months, setMonths] = useState('');
-  const [years, setYears] = useState('');
   const [birthDay, setBirthDay] = useState('');
   const [birthMonth, setBirthMonth] = useState('');
   const [birthYear, setBirthYear] = useState('');
@@ -28,8 +25,6 @@ export default function HomeDis() {
       document.getElementById('todaysDate').innerText =
         date.toDateString() + (' ') + date.toLocaleTimeString()
   }
-  
-  // ---------------------------------------------------------------------------- 
 
   const bannerChange = (e) => {
     e.preventDefault();
@@ -269,6 +264,24 @@ export default function HomeDis() {
               <div id='birth_results'></div>
               <div id='birth_math'></div>
 
+            </div>
+
+            {/* Right side layer 3 */}
+            <div id='text_view'>
+              <div id='counter_title'>Text Counter</div>
+              <textarea
+                id='text_area'
+                placeholder="Type here and you'll see the counter for your characters used!"
+                onChange={e => setTextCounter(e.target.value)}>
+              </textarea>
+              {textCounter.length === 0
+                ?
+                <div></div>
+                :
+                <div id='text_counter'>
+                  {textCounter.length}
+                </div>}
+              
             </div>
 
           </div>
