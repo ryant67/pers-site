@@ -28,7 +28,7 @@
 #home_message {
     width: 98%;
     height: 88px;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
     text-align: center;
     font-size: 15px;
     border-left: 2px solid black;
