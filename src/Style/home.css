@@ -144,6 +144,9 @@
     width: 98%;
     min-height: 100px;
     margin: 20px auto;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 8px;
 }
 
 #todaysDate {
@@ -184,4 +187,10 @@
     border-radius: 5px;
     background-color: rgb(0, 216, 255);
     cursor: pointer;
+}
+
+#birth_results {
+    width: 98%;
+    margin: 0 auto;
+    text-align: center;
 }

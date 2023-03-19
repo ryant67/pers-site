@@ -80,27 +80,27 @@ export default function HomeDis() {
     let dd = date.getDate() + (daysByMonth - Number(birthDay));
 
     // -----------------------------------------------------------
-    // Checking if the birth day has happened yet
-    // -----------------------------------------------------------
-
-    if (birthDay > date.getDate()) {
-      document.getElementById('resulting_days').innerText =
-        `You are ${dd} days old.`;
-    } else {
-      document.getElementById('resulting_days').innerText = 
-        `You are ${d} days old.`
-    }
-
-    // -----------------------------------------------------------
     // Checking if the birth month has happened yet
     // -----------------------------------------------------------
 
     if (birthMonth > date.getMonth()) {
-      document.getElementById('resulting_years').innerText =
-        `You are ${yy} years, ${m} months old.`;
+      document.getElementById('birth_results').innerText =
+        `You are ${yy} years, ${m} months, and `;
     } else {
-      document.getElementById('resulting_years').innerText =
-        `You are ${y} years, ${mm} months old.`;
+      document.getElementById('birth_results').innerText =
+        `You are ${y} years, ${mm} months, and `;
+    }
+
+    // -----------------------------------------------------------
+    // Checking if the birth day has happened yet
+    // -----------------------------------------------------------
+
+    if (birthDay > date.getDate()) {
+      document.getElementById('birth_results').innerText +=
+        `${' '} ${dd} days old.`;
+    } else {
+      document.getElementById('birth_results').innerText +=
+        `${' '} ${d} days old.`;
     }
     
     // -----------------------------------------------------------
@@ -131,7 +131,7 @@ export default function HomeDis() {
       setDaysByMonth(30); // November
     } else if (birthMonth === '12') {
       setDaysByMonth(31); // December
-    }
+    }      
 
     setBirthMonth('');
     setBirthDay('');
@@ -266,11 +266,8 @@ export default function HomeDis() {
                 </button>
               </form>
 
-              <div id='birth_results'>
-                <div id='resulting_years'></div>
-                <div id='resulting_months'></div>
-                <div id='resulting_days'></div>
-              </div>
+              <div id='birth_results'></div>
+              <div id='birth_math'></div>
 
             </div>
 
