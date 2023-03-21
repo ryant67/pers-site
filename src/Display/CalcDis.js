@@ -42,7 +42,7 @@ export default function CalcDis() {
               <div className='operator_btn'>+ / -</div>
               <div className='operator_btn'>%</div>
               <div className='operator_btn'>
-                <i class="fa-solid fa-divide"></i>
+                <i className="fa-solid fa-divide"></i>
               </div>
               <div
                 className='number_btn'
